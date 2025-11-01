@@ -54,16 +54,41 @@ if (isset($_SESSION['steamid'])) {
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="style.css">
-	<title>CS2 Simple Weapon Paints</title>
+	<title>TRIBILINES PAGINA WEB</title>
 </head>
 
 <body>
 
 	<?php
 	if (!isset($_SESSION['steamid'])) {
-		echo "<div class='topbar'><h2>To choose weapon paints loadout, you need to ";
-		loginbutton("rectangle");
-		echo "</h2></div>";
+	?>
+	<div class="landing-hero">
+		<div class="container hero-content">
+			<div class="hero-copy">
+				<span class="hero-badge">Tribilines Skins</span>
+				<h1 class="hero-title">Diseña tu loadout antes de entrar al servidor.</h1>
+				<p class="hero-subtitle">Selecciona skins, cuchillos con un solo clic.</p>
+				<ul class="hero-highlights">
+					<li>Previsualizaciones en alta calidad</li>
+					<li>Guardado instantáneo en tu cuenta</li>
+					<li>!WP para sincronizar tus skins ingame</li>
+				</ul>
+				<div class="hero-actions">
+					<?php loginbutton("rectangle"); ?>
+					<span class="hero-hint">Conecta tu cuenta Steam para empezar</span>
+				</div>
+			</div>
+			<div class="hero-illustration">
+				<div class="hero-card">
+					<div class="hero-card-header">Preview</div>
+					<div class="hero-card-body">
+						<img src="preview.png" alt="Vista previa de skins" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php
 	} else {
 		$knifeWeaponNames = [];
 		foreach ($knifes as $knifeKey => $knifeMeta) {
